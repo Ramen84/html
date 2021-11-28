@@ -5,13 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 </head>
 <body>
     <h1>Form example with validations</h1>
     <p>Incorrect validations, include in JS file instead of HTML file</p>
     <br>
+    
+    <form name="track" action="/index.html" method="POST" onsubmit="return validacion()">
+        
 
+        <div class="boxes">
+            <label for="summary1">Suggestions free, text & numbers! 🙋‍♀️ </label>
+            <br>
+            <input id="summary1" name="summary1" type="text" minlength="5" maxlength="250" required>
+        </div>
+
+        <div class="boxes">
+            <label for="summary2">Suggestions numbers! 💁‍♀️ </label>
+            <br>
+            <input id="summary2" name="summary2" type="text" minlength="5" maxlength="250" required>
+        </div>
+
+        <div class="boxes">
+            <label for="payment">Credit Card Number:</label>
+            <br>
+            <input id="payment" name="payment" type="text" pattern="[0-9]{14,16}">
+        </div>
+
+        <div class="boxes">
+            <label for="years"> Years of experience:</label>
+            <input id="years" name="years" type="number" min="1" max="20" step="1">
+        </div>
+
+        <div class="boxes">
+            <label for="volume"> Volume Control</label>
+            <br>
+            <input id="volume" name="volume" type="range" min="0" max="100" step="1">
+        </div>
+
+
+        <div class="boxes">
+            <p>Choose your pizza toppings:</p>
+            <label for="cheese">Extra cheese</label>
+            <input id="cheese" name="topping" type="checkbox" value="cheese">
+            <br>
+            <label for="pepperoni">Pepperoni</label>
+            <input id="pepperoni" name="topping" type="checkbox" value="pepperoni">
+            <br>
+            <label for="anchovy">Anchovy</label>
+            <input id="anchovy" name="topping" type="checkbox" value="anchovy">
+        </div>
+
+        <div class="boxes">
+            <p>What is sum of 1 + 1?</p>
+            <input type="radio" id="two" name="answer" value="2">
+            <label for="two">2</label>
+            <br>
+            <input type="radio" id="eleven" name="answer" value="11">
+            <label for="eleven">11</label>
+        </div>
+
+        <div class="boxes">
+            <label for="lunch">What's for lunch?</label>
+            <select id="lunch" name="lunch">
+                <option value="pizza">  🍕  </option>
+                <option value="curry">  🍔  </option>
+                <option value="salad">  🥗  </option>
+                <option value="ramen">  🍜  </option>
+                <option value="tacos">  🌮  </option>
+            </select>
+        </div>
+
+        <div class="boxes">
+            <label for="city">Ideal city to visit?</label>
+            <br>
+            <input type="text" list="cities" id="city" name="city">
+            <datalist id="cities">
+              <option value="New York City"></option>
+              <option value="Tokyo"></option>
+              <option value="Barcelona"></option>
+              <option value="Mexico City"></option>
+              <option value="Melbourne"></option>
+              <option value="Other"></option>  
+            </datalist>
+        </div>
+
+
+
+        <br>
+        <br>
+        <input type="submit" value="Send">
+
+    </form>
 
 
 </body>
 </html>
+
